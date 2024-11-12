@@ -1,0 +1,64 @@
+body{
+    margin: 0px;
+    padding: 0px;
+    background-color: antiquewhite;
+} 
+
+
+
+
+.parent{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1500px;
+    height: 630px;
+}
+
+.head{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    width: 700px;
+    height: 380px;
+    background-color: rgb(219, 160, 119);
+    border-radius: 7px;
+  
+
+}
+
+.title{
+    font-size:30px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 50px;
+       
+}
+
+.inputbox1{
+    background-color: white;
+    width: 250px;
+    height: 30px;
+    border-style: ridge ;
+    margin-top: 10px;
+    border-radius: 5px;
+   
+}
+
+
+button{
+    background-color: antiquewhite;
+    width: 170px;
+    height: 30px;
+    margin-top: 5px;
+    margin-left: 70px;
+    border-radius: 3px;
+}
+
+.hint{
+    text-align: center;
+}
+
+

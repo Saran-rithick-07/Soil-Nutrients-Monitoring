@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./home.css">
+</head>
+<body>
+   
+    <div class="parent">
+
+        <div class="head">
+            <div class="title"> <b> Welcome to Soil Nutrients Monitoring </b></div>
+            <div>
+                <label for="inputBox1"> <b>Email or Username</b></label> <br>
+                <input class="inputbox1" type="text" id="inputBox1">
+            </div>
+            <div>
+                <label for="inputBox2"> <b>Enter your Password</b></label><br>
+                <input class="inputbox1" type="password" id="inputBox2">
+            </div>
+      
+            <div class="loginbut">
+                <button onclick="AddData()" id="information"> <b>Login</b></button>
+                
+                <p class="hint">If you don't have existing account, please register!</p>
+                
+                    <button onclick="AddData2()" id="information"> <b>Click to Register</b></button>
+                </div>
+                <div>
+                <p id="result"></p>
+        </div>
+        </div>
+    </div>
+
+</body>
+<script>
+    function AddData(){
+        console.log("Function called");
+        var email = document.getElementById("inputBox1").value;
+        var pass = document.getElementById("inputBox2").value;
+        var email1 = document.getElementById("inputBox1");
+        var pass1 = document.getElementById("inputBox2");
+        var res = document.getElementById("result");
+
+        if ((email.length >= 4) && (pass.length >= 6 || pass.length <= 12)) {
+            window.location.href="fpage.html"; 
+            // email1.className = "green"
+            // pass1.className = "green"
+            // res.className = "success"
+     }else if (email == "" || pass == "") {
+            res.innerHTML = "Username and Password cannot be Empty !"
+            // email1.className = "red";
+            // pass1.className = "red";
+            // res.className = "redcol"
+
+        }else{
+            res.innerHTML = "Username and Password is wrong!"
+            
+        }
+    }
+        
+         let name = document.getElementById("inputBox1").value;
+         let numb = document.getElementById("inputBox2").value;
+         let productList = [];
+         let token = localStorage.getItem("productList"); 
+
+         
+
+         if(token == null){
+            productList = []
+         }else{
+            productList = JSON.parse(token)
+         }
+
+         console.log("token", token)
+
+
+          productList.push(
+            {name: name, numb: numb}
+          );
+
+          localStorage.setItem("productList", JSON.stringify(productList));
+          //console.log(productList);
+
+          function clearData(){
+            
+            console.log("index", index)
+            let productList
+            if (localStorage.getItem("productList") == null){
+                productList = [];
+            
+            } else{
+                productList = JSON.parse(localStorage.getItem("productList"));
+            }
+
+            productList.splice(index, 1);
+
+            localStorage.setItem("productList", JSON.stringify(productList));
+            showData();
+            location.reload();
+            console.log("productList", productList)
+          }
+
+          function editData(){
+            let productList
+            if (localStorage.getItem("productList") == null){
+                productList = [];
+          } else {
+            productList = JSON.parse(localStorage.getItem("productList"));
+          }
+          console.log("productionList1", productList)
+          console.log("productionList2", productList[index])
+          console.log("productionList3", productList[index].name)
+
+          document.getElementById("name-edit").value = productList[index].name
+          //document.getElementById("name-edit").value = productList[index].name;
+          //document.getElementById("name-edit").value = productList[index].name;
+    }
+    editData()
+
+    function AddData2(){
+        window.location.href="reg.html";
+    }
+</script>    
+
+</html>

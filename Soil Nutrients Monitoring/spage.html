@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./spage.css">
+</head>
+<body>
+    <div class="parent">
+        <div class="container-1">
+            <div class="container-logo">
+                <p class="logohead"><h1 class="top">Soil Nutrients Monitoring</h1></p>
+            </div>
+        <div class="container-list">
+            <ul class="list-para">
+                <li class="list-1"><a href="./fpage.html" target="blank"><b>Home</b></a> </li>
+                <li class="list-1"><b>Sugestion Box</b></li>
+            
+                <li class="list-1"><a href="./home.html" target="_blank"><b>logout</b></a></li>
+            </ul>
+            </div>
+            </div>
+            <div class="main">
+                <div class="first">
+                    <div class="head1"><button onclick="show()" class="butt1"><b><h2>Show Suitable Crops to Cultivate </h2></b></button></div>
+                    <div id="crops">
+                        <p class="desc"><b>According to current Nutrients Level of Soil</b></p>
+                      <ul class="listcrops">
+                        <li class="list-2"><b><h3>Paddy</h3></b></li>
+                        <li class="list-2"><b><h3>wheat</h3></b></li>
+                        <li class="list-2"><b><h3>Groundnut</h3></b></li>
+                        <li class="list-2"><b><h3>Mungbean</h3></b></li>
+                        <li class="list-2"><b><h3>Cardamom</h3></b></li>
+                        <li class="list-2"><b><h3>Tomato</h3></b></li>
+                        <li class="list-2"><b><h3>Potato</h3></b></li>
+                        <li class="list-2"><b><h3>Green Chilli</h3></b></li>
+                      </ul>
+                      <button onclick="clear1()"  id="cancel1"><b>Close</b></button>
+                    </div>
+                </div>
+                <div class="second">
+                   <div class="head2"><b><h2>Suggestions on Fertilizer Practices</h2></b></div>
+                    <div class="Search">
+                        <div class="head3"><p><h3>Enter Crop / Plant Name</h3></p>
+                        <input type="text" class="option">
+                    <button onclick="show2()" class="butt2"><b>Search</b></button>
+                    </div> 
+                    <div  id="fert">
+                        <ul class="listfert">
+                            <li class="list-3"><h3><b>Potassium Chloride</b></h3></li>
+                            <li class="list-3"><h3><b>Urea</b></h3></li>
+                            <li class="list-3"><h3><b>Diammonium Phosphate</b></h3></li>
+                            <li class="list-3"><h3><b>Ammonium Sulphate</b></h3></li>
+                        </ul>
+                        <button onclick="clear2()" id="cancel2"><b>Refresh</b></button>
+                    </div>  
+                </div>
+                </div>
+            </div>
+    </div>
+    <script>
+        function show(){
+            var add = document.getElementById("crops");
+            add.style.display = "block";
+        }
+
+        function show2(){
+            var give = document.getElementById("fert");
+            give.style.display = "block";
+        }
+
+        function clear1(){
+            var clear1= document.getElementById("crops");
+            clear1.style.display = "none";
+        }
+
+        function clear2(){
+            var clear2= document.getElementById("fert");
+            clear2.style.display = "none";
+        }
+    </script>
+</body>
+</html>
